@@ -1,4 +1,4 @@
-## **Calendar GUI Project**
+# **Calendar GUI Project**
 
 This project is a Python-based application that uses **Tkinter** to create a graphical user interface (GUI) for displaying a calendar of a given year. It is simple, interactive, and user-friendly.
 

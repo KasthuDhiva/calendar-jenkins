@@ -1,12 +1,20 @@
 pipeline:
-  agent: any
+  agent:
+    any
   stages:
-    - stage: "Install Dependencies"
+    - stage: Install Dependencies
       steps:
-        - sh: pip install -r requirements.txt
-    - stage: "Run Tests"
+        - shell: pip install -r requirements.txt
+    - stage: Run Tests
       steps:
-        - sh: pytest tests/
-    - stage: "Run Application"
+        - shell: pytest tests/
+    - stage: Run Application
       steps:
-        - sh: python3 calendar_app.py
+        - shell: python3 calendar_app.py
+  post:
+    always:
+      - shell: echo "Pipeline execution completed!"
+    success:
+      - shell: echo "Pipeline executed successfully!"
+    failure:
+      - shell: echo "Pipeline failed. Check logs for details."
